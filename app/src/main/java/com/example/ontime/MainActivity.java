@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity  {
         btn_arriveTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "ontime이 예상 도착시간을 계산중입니다...!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "온타임이 예상 도착시간을 계산중입니다...!", Toast.LENGTH_SHORT).show();
 
                 System.out.println("길찾기 버튼 호출!");
 
@@ -207,10 +207,11 @@ public class MainActivity extends AppCompatActivity  {
                 int promiseTime_hour = timeModel.getPromiseTime_hour();
                 int promiseTime_min = timeModel.getPromiseTime_min();
 
-                System.out.println("길찾기 시 약속시간 : "+promiseTime_hour);
+                System.out.println("길찾기 시 약속시간 시 : "+promiseTime_hour);
+                System.out.println("길찾기 시 약속시간 분: "+promiseTime_min);
 
-                if(promiseTime_hour == 0  || promiseTime_min == 0 ){
-                    Toast.makeText(getApplicationContext(), "약속 시간을 등록해 등록해주세요!", Toast.LENGTH_SHORT).show();
+                if(promiseTime_hour == 0  && promiseTime_min == 0 ){
+                    Toast.makeText(getApplicationContext(), "약속 시간을 등록해주세요!", Toast.LENGTH_SHORT).show();
                     return ;
                 }
 
@@ -247,7 +248,7 @@ public class MainActivity extends AppCompatActivity  {
         btn_cancleAlram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Alarm 종료",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"알람 종료",Toast.LENGTH_SHORT).show();
                 // 알람매니저 취소
                 alarmManager.cancel(pendingIntent);
 
@@ -272,7 +273,7 @@ public class MainActivity extends AppCompatActivity  {
         int totalTime = transTime+readyTime+intervalTime;
 
         txt_promiseTime.setText("당신의 약속시간은 내일 " + promiseTime_hour + " 시" + promiseTime_min +" 분 까지네요!");
-        txt_totalTime.setText("출발지부터 목적지까지의 총 예상 소요시간은 " + (transTime+intervalTime) +" 분 입니다");
+        txt_totalTime.setText("출발지부터 목적지까지의 \n총 예상 소요시간은 " + (transTime+intervalTime) +  " 분 입니다");
 
         System.out.println("총 이동시간 : "+totalTime);
 
@@ -317,7 +318,11 @@ public class MainActivity extends AppCompatActivity  {
             txt_startTime.setText("당신이 출발해야 하는 시간은 약 " + hour + "시" +minutes+"분 입니다.");
         }
 
-        txt_alramTime.setText("약속시간으로 부터 " + totalTime +"분 전에 꺠워드릴게요!");
+        System.out.println("계산된 시간 : " + totalTime / 60);
+        System.out.println("계산된 분 : "+ totalTime  % 60);
+
+//        txt_alramTime.setText("약속시간으로 부터 " + totalTime +"분 전에 깨워드릴게요!");
+        txt_alramTime.setText("\n약속시간으로 부터 " + totalTime / 60 +"시간 "+totalTime % 60+"분 전에 깨워드릴게요!");
 
         txt_promiseTime = (TextView)findViewById(R.id.txt_promiseTime);
         txt_startTime =(TextView)findViewById(R.id.txt_startTime);

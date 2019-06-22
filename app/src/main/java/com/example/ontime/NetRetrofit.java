@@ -10,7 +10,7 @@ import retrofit2.http.Query;
 interface RetrofitService {
 
     @Headers({
-            "Authorization: KakaoAK "+R.string.kakao_api_key
+            "Authorization: KakaoAK 8a910942488ae9b7cc2ae09d61d381ff"
     })
     @GET("v2/local/search/address.json")
     Call<AddressRepo> getLocalAddress(@Query("query") String address);

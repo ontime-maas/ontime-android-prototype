@@ -1,133 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#fff"
     tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f000"
+        android:textSize="35dp"
+        android:fontFamily="@font/nanum"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="여러분의 온타임"/>
 
     <Button
         android:text="약속시간 정하기"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_back"
         android:id="@+id/btn_promiseTime"
         android:layout_width="match_parent"
+        android:fontFamily="@font/nanum"
+        android:textColor="@android:color/white"
         android:layout_height="wrap_content" />
 
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_weight="1"
-            android:text="준비시간 : (분)"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:layout_weight="3"
-            android:id="@+id/edit_ready"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_weight="1"
-            android:text="등록하기"
-            android:id="@+id/btn_ready_apply"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_weight="1"
-            android:text="출발지 : "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:text="경수대로 665번길 75"
-            android:layout_weight="3"
-            android:id="@+id/edit_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_weight="1"
-            android:text="등록하기"
-            android:id="@+id/btn_start_apply"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <TextView
-            android:layout_weight="1"
-            android:text="도착지 : "
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <EditText
-            android:text="학의로 186"
-            android:layout_weight="3"
-            android:id="@+id/edit_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_weight="1"
-            android:text="등록하기"
-            android:id="@+id/btn_end_apply"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="#f000"
+                android:text="준비시간(분) :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum"/>
+
+            <EditText
+                android:layout_weight="3"
+                android:id="@+id/edit_ready"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_marginTop="5dp"
+                android:text="등록하기"
+                android:id="@+id/btn_ready_apply"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/nanum"
+                android:layout_marginRight="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_back"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="#f000"
+                android:text="출발지 : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:text="경수대로 665번길 75"
+                android:layout_weight="2"
+                android:id="@+id/edit_start"
+                android:fontFamily="@font/nanum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+
+                android:text="등록하기"
+                android:id="@+id/btn_start_apply"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/nanum"
+                android:layout_marginRight="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_back"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="#f000"
+                android:text="도착지 : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:text="학의로 186"
+                android:layout_weight="2"
+                android:id="@+id/edit_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum" />
+            <Button
+
+                android:text="등록하기"
+                android:id="@+id/btn_end_apply"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/nanum"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_back"/>
+        </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
     <Button
+        android:layout_marginTop="5dp"
         android:id="@+id/btn_arriveTime"
         android:text="예상 도착시간 계산하기"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanum"
+        android:textColor="@android:color/white"
+        android:background="@drawable/btn_back"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
 
-    <TextView
-        android:textSize="20dp"
-        android:id="@+id/txt_promiseTime"
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <TextView
-        android:textSize="20dp"
-        android:id="@+id/txt_totalTime"
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:textSize="20dp"
-        android:id="@+id/txt_startTime"
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:textSize="20dp"
-        android:id="@+id/txt_alramTime"
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
     <Button
         android:id="@+id/btn_setAlram"
         android:text="알람 울리기"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="130dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/nanum"
+        android:textColor="@android:color/white"
+        android:background="@drawable/btn_back"/>
 
     <Button
+        android:layout_marginTop="5dp"
         android:id="@+id/btn_cancleAlram"
         android:text="알람 끄기"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/btn_back"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
 
+        <TextView
+            android:textSize="18dp"
+            android:layout_marginTop="3dp"
+            android:id="@+id/txt_promiseTime"
+            android:textColor="#424242"
+            android:text=""
+            android:fontFamily="@font/nanum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
+        <TextView
+            android:textSize="23dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/txt_totalTime"
+            android:textColor="#424242"
+            android:text=""
+            android:fontFamily="@font/nanum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:textColor="#424242"
+            android:id="@+id/txt_startTime"
+            android:text=""
+            android:fontFamily="@font/nanum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="23dp"
+            android:id="@+id/txt_alramTime"
+            android:textColor="#000000"
+            android:text=""
+            android:fontFamily="@font/nanum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 </LinearLayout>

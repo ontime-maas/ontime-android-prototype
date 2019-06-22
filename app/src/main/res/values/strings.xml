@@ -1,11 +1,15 @@
 <resources>
-    <string name="app_name">ontime</string>
+    <string name="app_name">온타임</string>
     <string name="notification_channel_id">"notification_channel_id"</string>
     <string name="notification_channel_name">"notification_channel_name"</string>
 
     <!--API 키-->
-    <string name="kakao_api_key">""</string>
-    <string name="odsay_api_key">""</string>
+    <string name="kakao_api_key">"**"</string>
+    <string name="odsay_api_key">"**"</string>
 
+    <style name="FullscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 
 </resources>

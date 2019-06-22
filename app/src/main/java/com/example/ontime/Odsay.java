@@ -24,7 +24,7 @@ public class Odsay extends Thread{
 
     public Odsay(Context context) {
         this.context = context;
-        this.oDsayService = ODsayService.init(context, String.valueOf(R.string.odsay_api_key));
+        this.oDsayService = ODsayService.init(context, String.valueOf("LKJY1MUEEh7mgvkWpwk0gwQTlehxaZgIjU+0vlf7nl4"));
         oDsayService.setReadTimeout(5000);
         oDsayService.setReadTimeout(5000);
     }

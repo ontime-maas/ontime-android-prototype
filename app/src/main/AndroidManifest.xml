@@ -15,7 +15,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDQhifoVY7mRKQ6CnmrRtuRfghyY2pIUdU "/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/FullscreenTheme">
+
+
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
